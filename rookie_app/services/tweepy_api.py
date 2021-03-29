@@ -17,7 +17,7 @@ def get_tweets(group_name):
      - 한 그룹 당 10건을 가져오고, 검색결과는 'latest'를 기준으로 함
     """
 
-    raw_tweets = api.search(group_name, count=10, 
+    raw_tweets = api.search(group_name, count=3, 
                             result_type='latest')
                                    
     return raw_tweets
