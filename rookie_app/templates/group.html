@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block alert %}
+{% if alert_msg %}
+<div class="alert alert-{{ alert_msg.type }}" role="alert">
+  {{ alert_msg.msg }}
+</div>
+{% endif %}
+{% endblock %}
+
+{% block title %}
+Select Groups
+{% endblock %}
+
+{% block lead %}
+<b>
+선호하는 Kpop Artist를 선택하는 페이지입니다.
+<br>
+CHECK YOUR FAVORITE KPOP ARTISTS!
+<br>
+<font color='green'>(Please select 3 to 7 groups.)</font>
+</b>
+{% endblock %}
+
+{% block main_body %}
+<form method="POST" action='/api/group/{{ user_id }}/'>
+  <input type="checkbox" id="id_1" name="group" value="BTS">
+  <label for="BTS"> BTS</label><br>
+  <input type="checkbox" id="id_2" name="group" value="BLACKPINK">
+  <label for="BLACKPINK"> BLACKPINK</label><br>
+  <input type="checkbox" id="id_3" name="group" value="ITZY">
+  <label for="ITZY"> ITZY</label><br>
+  <input type="checkbox" id="id_4" name="group" value="MonstaX">
+  <label for="MonstaX"> MonstaX</label><br>
+  <input type="checkbox" id="id_5" name="group" value="IU">
+  <label for="IU"> IU</label><br>
+  <input type="checkbox" id="id_6" name="group" value="ATEEZ">
+  <label for="ATEEZ"> ATEEZ</label><br>
+  <input type="checkbox" id="id_7" name="group" value="BraveGirls">
+  <label for="BraveGirls"> BraveGirls</label><br>
+  <input type="checkbox" id="id_8" name="group" value="DREAMCATCHER">
+  <label for="DREAMCATCHER"> DREAMCATCHER</label><br>
+  <input type="checkbox" id="id_9" name="group" value="NCT">
+  <label for="NCT"> NCT</label><br>
+  <input type="checkbox" id="id_10" name="group" value="TWICE">
+  <label for="TWICE"> TWICE</label><br>
+  <br>
+  <input type="submit" value="Submit", href='/api/group/{{ user_id }}/'> <i><font color='#6930c3'>  Please wait... It will take 1 min to load twitter data.
+  </i></font>
+</form>
+{% endblock %}

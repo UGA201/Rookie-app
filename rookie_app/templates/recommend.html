@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title  %}
+Recommendation
+{% endblock  %}
+
+{% block lead  %}
+KPOP ROOKIE FOR <b><font color='#f1687a7'> {{ username }} </font></b>!
+{% endblock  %}
+
+{% block main_body  %}
+{% if rookie_name %}
+<p><center><font size=16>{{ rookie_name }}</font></p>
+{% if rookie_name=='ENHYPEN' %}
+<img src='https://newsimg.hankookilbo.com/cms/articlerelease/2020/11/12/1da1aa32-15b9-4304-8013-3968906c5769.jpg', width=500px>
+{% elif rookie_name=='CRAVITY' %}
+<img src='https://image.ytn.co.kr/general/jpg/2020/0414/202004141722450079_d.jpg', width=500px>
+{% elif rookie_name=='DRIPPIN' %}
+<img src='https://images.chosun.com/resizer/p7KyBeG8aRBoGneYqozx-70RWMY=/650x459/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/NHWF75NG2N2DUAIX7LFQBCQPYI.jpg', width=500px>
+{% elif rookie_name=='STAYC' %}
+<img src='https://img.hankyung.com/photo/202010/5e8e6ef2110d73389c82fd9f0296b870.jpg', width=500px>
+{% elif rookie_name=='TREASURE' %}
+<img src='https://img.hankyung.com/photo/202008/01.23427599.1.jpg', width=500px>
+{% elif rookie_name=='WEI' %}
+<img src='https://newsimg.hankookilbo.com/cms/articlerelease/2020/09/17/f5c1b056-576c-4d1e-b401-72764ee8d569.jpg', width=500px>
+{% elif rookie_name=='Weeekly' %}
+<img src='https://newsimg.sedaily.com/2020/05/12/1Z2Q07BF0N_1.jpg', width=500px>
+{% elif rookie_name=='aespa' %}
+<img src='https://images.chosun.com/resizer/bWTNjF2h3sV_6ZXCGrc2sYQkIKA=/640x427/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/ITCAMPJT3E5PYIVDU7AS6BVGGI.jpg', width=500px>
+{% elif rookie_name=='cignature' %}
+<img src='https://file2.nocutnews.co.kr/newsroom/image/2020/09/22/20200922155515763285_0_800_533.jpg', width=500px>
+{% elif rookie_name=='DKB' %}
+<img src='https://file.mk.co.kr/meet/neds/2020/05/image_readtop_2020_543771_15905675524215608.jpg', width=500px>
+</center>
+{% else %}
+{% endif %}
+{% endif %}
+{% endblock  %}

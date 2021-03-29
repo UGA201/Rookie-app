@@ -1,0 +1,1 @@
+web: gunicorn --workers=2 'rookie_app:create_app()'
