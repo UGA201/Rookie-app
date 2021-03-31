@@ -12,18 +12,18 @@ def add_user():
     username = request.form['username']
 
     if not username:
-      return redirect(url_for('main.user_index', msg_code=1), code=400)
+      return redirect(url_for('main.user_index', msg_code=1))
     
     exist = User.query.filter_by(username=username).first()
     if exist is not None:
-      return redirect(url_for('main.user_index', msg_code=4), code=400)
+      return redirect(url_for('main.user_index', msg_code=4))
 
     add_user = User(username=username)
     db.session.add(add_user)
     db.session.commit()
-    return redirect(url_for('main.user_index', msg_code=0), code=200)
+    return redirect(url_for('main.user_index', msg_code=0))
     
-    
+
 @bp.route('/user/')
 @bp.route('/user/<int:user_id>/')
 def delete_user(user_id=None):
@@ -36,4 +36,4 @@ def delete_user(user_id=None):
 
     db.session.delete(d_user)
     db.session.commit()
-    return redirect(url_for('main.user_index', msg_code=3), code=200)
+    return redirect(url_for('main.user_index', msg_code=3))

@@ -17,6 +17,7 @@ def msg_processor(msg_code):
         - 3 : Successfully deleted user
         - 4 : Username already exists
         - 5 : Select groups again
+        - 6 : No result yet
     '''
 
     msg_code = int(msg_code)
@@ -49,6 +50,10 @@ def msg_processor(msg_code):
         (
             'Please select 3 to 7 groups',
             'warning'
+        ),
+        (
+            'No result yet',
+            'info'
         )
     ]
 

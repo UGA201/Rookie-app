@@ -6,6 +6,7 @@ class User(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     username = db.Column(db.String(64), nullable=False)
     groups = db.relationship('Group', backref=db.backref('user'), cascade='all, delete-orphan')
+    latest_result = db.Column(db.String(64), nullable=True)
 
     def __repr__(self):
         return f"User {self.id} {self.username}"

@@ -17,7 +17,7 @@ def select_group(user_id=None):
     
     # 너무 적거나 많이 선택한 경우 재선택 안내
     if len(selected_group) < 3 or len(selected_group) > 7:
-      return redirect(url_for('main.group_index', user_id=user_id, msg_code=5), code=400)
+      return redirect(url_for('main.group_index', user_id=user_id, msg_code=5))
 
     # 해당 유저가 이미 선택한 그룹이 있는 경우, 데이터 삭제 후 재추가(Update)
     f_user = Group.query.filter_by(user_id=user_id).all()
@@ -63,6 +63,6 @@ def select_group(user_id=None):
         db.session.commit()
   
     # return 'Successfully Uploaded', 200
-    return redirect(url_for('main.recommend_index', user_id=user_id), code=200)
+    return redirect(url_for('main.recommend_index', user_id=user_id))
 
     

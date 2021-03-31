@@ -31,6 +31,7 @@ If you want to delete your id, click 'Delete User'.
       <th scope="col">Username</th>
       <th scope="col">Go Next</th>
       <th scope="col">Delete</th>
+      <th scope="col">Latest</th>
     </tr>
   </thead>
   <tbody class='table-light'>
@@ -46,6 +47,11 @@ If you want to delete your id, click 'Delete User'.
       <td>
         <a class="btn btn-danger" , href='/api/user/{{ user.id }}/'>
           Delete User
+        </a>
+      </td>
+      <td>
+        <a class="btn btn-secondary" , href='/recommend/latest/{{ user.id }}/'>
+          Latest Result
         </a>
       </td>
     </tr>
