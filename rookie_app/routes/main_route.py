@@ -34,7 +34,7 @@ def user_index():
     
     alert_msg = main_funcs.msg_processor(msg_code) if msg_code is not None else None
 
-    user_list = User.query.all()
+    user_list = User.query.order_by(User.id.desc())
 
     return render_template('user.html', alert_msg=alert_msg, user_list=user_list)
 
