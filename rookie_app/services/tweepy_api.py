@@ -1,10 +1,10 @@
 import tweepy
 
-api_key = '6cfRJZasFXbSieAlecgxEmq4a'
-api_secret = 'Tss8Sn4lkL8TjahC3Vu8MtbXqp79CiV3454r6TLRiKLWVAetIr'
+api_key = 'e9VJ2E66qqfQcGWRW1k9CbKGY'
+api_secret = 'qsbpDfNd0WPzL090qwKoFJcPFtWSsQiNQvvbZLrl1ujPUe7V0x'
 
-access_token = '1372382199748567042-U0Ia3vsMhpkuLjkNwNdf3lrpR187pF'
-access_secret = 'j1KvxfVyWHkFldGVYLrUzrwPYiRtgG2NRmldyOSvzP6gm'
+access_token = '1372382199748567042-5cY2FjeWLZ9d0EtAGqg7esBHE8E94W'
+access_secret = '3FT384NVPJCndU0WWqprUbMRUkug4cueQgKcAq7zeDn8B'
 
 auth = tweepy.OAuthHandler(api_key, api_secret)
 auth.set_access_token(access_token, access_secret)
@@ -17,7 +17,7 @@ def get_tweets(group_name):
      - 한 그룹 당 10건을 가져오고, 검색결과는 'latest'를 기준으로 함
     """
 
-    raw_tweets = api.search(group_name, count=3, 
-                            result_type='latest')
+    raw_tweets = api.search(group_name, count=3,
+                            result_type='recent')
                                    
     return raw_tweets
